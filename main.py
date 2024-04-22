@@ -3,6 +3,7 @@ import ctypes
 
 url = "https://api.worldbank.org/v2/en/country/all/indicator/SI.POV.GINI?format=json&date=2011:2020&per_page=32500&page=1&country=%22Argentina%22"
 response = requests.get(url)
+
 if response.status_code == 200:
     data = response.json()
 else:
@@ -27,16 +28,18 @@ for item in data[1]:
         # print(type(gini))
         break
 
-# Aquí iría mi función de C si tuviera una T_T
+#carga la biblioteca compartida
 # cLibrary = ctypes.CDLL('/home/david/CLionProjects/untitled/libftoi.so')
 cLibrary = ctypes.CDLL('./libftoi.so')
 # c_float_to_int = cLibrary.cFloatToInt
+
+#establece el tipo de argumento de la función
 cLibrary.cFloatToInt.argtypes = [ctypes.c_float]
+#establece el tipo de retorno de la función
 cLibrary.cFloatToInt.restype = ctypes.c_int
 
 def c_float_to_int(flotante):
     return cLibrary.cFloatToInt(flotante)
-
 
 if gini is not None:
     print(c_float_to_int(gini))
