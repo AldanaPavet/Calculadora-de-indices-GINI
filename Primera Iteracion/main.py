@@ -27,8 +27,7 @@ for item in data[1]:
         # print(type(gini))
         break
 
-# Aquí iría mi función de C si tuviera una T_T
-# cLibrary = ctypes.CDLL('/home/david/CLionProjects/untitled/libftoi.so')
+# cLibrary = ctypes.CDLL('/home/aldanapavet/Escritorio/Sist-Comp/Primera Iteracion/libftoi.so')
 cLibrary = ctypes.CDLL('./libftoi.so')
 # c_float_to_int = cLibrary.cFloatToInt
 cLibrary.cFloatToInt.argtypes = [ctypes.c_float]
