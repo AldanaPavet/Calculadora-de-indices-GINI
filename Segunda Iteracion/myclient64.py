@@ -1,6 +1,5 @@
 from msl.loadlib import Client64
 
-
 class MyClient64(Client64):
     """Call a function in 'libftoi' via the 'server32' wrapper."""
 
