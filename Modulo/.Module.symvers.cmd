@@ -1,0 +1,1 @@
+savedcmd_/home/aldanapavet/Escritorio/Sist-Comp/Modulo/Module.symvers :=  scripts/mod/modpost -m -a      -o /home/aldanapavet/Escritorio/Sist-Comp/Modulo/Module.symvers -T /home/aldanapavet/Escritorio/Sist-Comp/Modulo/modules.order -i Module.symvers -e 
